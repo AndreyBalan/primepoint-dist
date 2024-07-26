@@ -633,7 +633,8 @@ input[type=search]:focus {
 }
 .contact__map iframe {
   border-radius: 32px;
-  width: 100%
+  width: 100%;
+  max-width: 41.375rem
 }
 .contact__content {
   min-width: 23rem
@@ -656,7 +657,6 @@ input[type=search]:focus {
 }
 .contact__item {
   display: flex;
-  width: 41.375rem;
   gap: 1rem;
   margin-top: .75rem
 }
@@ -847,9 +847,6 @@ form button {
   .contact__map {
     width: 41.375rem
   }
-  .contact__map iframe {
-    max-width: 41.375rem
-  }
   .contact__btn {
     margin-top: 9.375rem
   }
@@ -995,9 +992,6 @@ form button {
   }
   .contact__map {
     width: .0000000625rem
-  }
-  .contact__map iframe {
-    max-width: 18.125rem
   }
   .contact__btn {
     margin-top: 2rem
@@ -1361,9 +1355,6 @@ form button {
   }
   .contact__map {
     width: clamp(.0000000625rem ,-15.0454544602rem + 75.2272726136vw ,41.375rem)
-  }
-  .contact__map iframe {
-    max-width: clamp(18.125rem ,9.6704545455rem + 42.2727272727vw ,41.375rem)
   }
   .contact__btn {
     margin-top: clamp(2rem ,-.6818181818rem + 13.4090909091vw ,9.375rem)
