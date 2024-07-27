@@ -380,7 +380,8 @@ input[type=search]:focus {
   align-items: center;
   justify-content: center;
   gap: 2.5rem;
-  border-radius: 4rem
+  border-radius: 4rem;
+  z-index: 6
 }
 .header__lang {
   display: flex;
@@ -464,7 +465,8 @@ input[type=search]:focus {
   margin-top: 2rem
 }
 .hero__btn {
-  display: block
+  display: block;
+  align-self: flex-end
 }
 .fields__wrapper {
   display: grid;
@@ -496,7 +498,8 @@ input[type=search]:focus {
   border-radius: 2rem;
   border: 1px solid #a799d2;
   background: #fff;
-  margin-top: 3rem
+  margin-top: 3rem;
+  height: 90%
 }
 .fields__item-title {
   font-style: normal;
@@ -562,7 +565,8 @@ input[type=search]:focus {
   height: 100%
 }
 .advantages__slide img {
-  width: 100%
+  width: 100%;
+  max-height: 100%
 }
 .advantages__btns {
   position: absolute;
@@ -599,6 +603,45 @@ input[type=search]:focus {
   border-radius: 100%;
   border: 1px solid #1e1e1e
 }
+.swiper-scrollbar {
+  display: none;
+  margin-top: 1.25rem;
+  position: relative;
+  -ms-touch-action: none;
+  border-radius: 4px;
+  background: linear-gradient(38deg,#dfeafe 9.78%,#d9cff0 93.44%)
+}
+.swiper-horizontal > .swiper-scrollbar {
+  position: absolute;
+  left: 1%;
+  bottom: -1.5rem;
+  z-index: 50;
+  height: 5px;
+  width: 98%
+}
+.swiper-vertical > .swiper-scrollbar {
+  position: absolute;
+  right: 3px;
+  top: 1%;
+  z-index: 50;
+  width: 5px;
+  height: 98%
+}
+.swiper-scrollbar-drag {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  border-radius: 4px;
+  background: #a799d2
+}
+.swiper-scrollbar-cursor-drag {
+  cursor: move
+}
+.swiper-scrollbar-lock {
+  display: none
+}
 .clients__wrapper {
   display: flex;
   gap: 5rem
@@ -608,7 +651,11 @@ input[type=search]:focus {
 }
 .clients__item-wrapper {
   border: 1px solid #dfeafe;
-  border-radius: 2rem
+  border-radius: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
 }
 .clients__item-img {
   max-width: 23.0625rem
@@ -629,7 +676,7 @@ input[type=search]:focus {
   gap: 1.25rem
 }
 .contact__map {
-  max-width: 100%;
+  max-width: 41.375rem;
   width: 100%
 }
 .contact__map iframe {
@@ -638,6 +685,7 @@ input[type=search]:focus {
   max-width: 41.375rem
 }
 .contact__content {
+  max-width: 23.0625rem;
   width: 100%
 }
 .contact__desct {
@@ -646,7 +694,8 @@ input[type=search]:focus {
 .contact__address {
   display: flex;
   gap: .0625rem;
-  max-width: 43.75rem
+  max-width: 43.75rem;
+  text-align: left
 }
 .contact__subtitle {
   font-family: Audiowide;
@@ -658,8 +707,11 @@ input[type=search]:focus {
 }
 .contact__item {
   display: flex;
-  gap: 1rem;
+  gap: .5rem;
   margin-top: .75rem
+}
+.contact__btn {
+  margin-top: 9.375rem
 }
 .contact__form {
   margin-top: 3rem
@@ -739,6 +791,9 @@ form button {
   }
   .header__container {
     top: 1.5rem
+  }
+  .header__menu {
+    height: 4.5rem
   }
   .header__menu {
     padding-top: .75rem
@@ -845,9 +900,6 @@ form button {
   .contact__wrapper {
     gap: 8.75rem
   }
-  .contact__btn {
-    margin-top: 9.375rem
-  }
 }
 @media (max-width:20em) {
   .title {
@@ -882,6 +934,9 @@ form button {
   }
   .header__container {
     top: .75rem
+  }
+  .header__menu {
+    height: 2.5rem
   }
   .header__menu {
     padding-top: .5rem
@@ -988,9 +1043,6 @@ form button {
   .contact__wrapper {
     gap: .0000000625rem
   }
-  .contact__btn {
-    margin-top: 2rem
-  }
 }
 @media (max-width:61.99875em) {
   .menu__body {
@@ -1062,6 +1114,11 @@ form button {
   .header__logo {
     margin: 0
   }
+  .header__lang {
+    position: absolute;
+    right: 5.5rem;
+    z-index: 6
+  }
   .header__content {
     gap: 1.25rem
   }
@@ -1070,12 +1127,19 @@ form button {
     align-items: flex-start;
     gap: 1.5rem
   }
+  .menu__icon {
+    position: absolute;
+    right: 2rem
+  }
   .logo__lg {
     display: none
   }
   .logo__md {
     display: block;
-    max-width: 8.5rem
+    max-width: 8.5rem;
+    position: absolute;
+    left: 2rem;
+    z-index: 6
   }
   .hero {
     margin-top: -1.25rem
@@ -1101,7 +1165,8 @@ form button {
     top: 0
   }
   .fields__inner {
-    margin-top: 0
+    margin-top: 0;
+    height: 100%
   }
   .why__wrapper {
     grid-template-columns: repeat(2,minmax(0,1fr))
@@ -1116,6 +1181,12 @@ form button {
   }
   .why__inner.no-border img:nth-child(2) {
     display: none
+  }
+  .advantages__btns {
+    display: none
+  }
+  .swiper-scrollbar {
+    display: block
   }
   .clients__content {
     max-width: 100%;
@@ -1132,17 +1203,24 @@ form button {
     flex-wrap: wrap
   }
   .contact__wrapper {
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    gap: 0
   }
   .contact__map {
     width: 100%
   }
   .contact__map iframe {
     max-width: 100%;
-    width: 100%
+    width: 100%;
+    margin-top: 2rem
   }
   .contact__content {
     width: 100%
+  }
+  .contact__btn {
+    margin-top: 3rem
   }
   form {
     text-align: center;
@@ -1159,7 +1237,7 @@ form button {
 }
 @media (max-width:61.99875em) and (max-width:20em) {
   .menu__body {
-    top: 2.1875rem
+    top: 1.25rem
   }
 }
 @media (max-width:61.99875em) and (any-hover:none) {
@@ -1189,6 +1267,20 @@ form button {
   .why__item:nth-child(5) {
     grid-column: span 1/span 1
   }
+  .why__inner.no-border img:nth-child(1) {
+    display: none
+  }
+  .why__inner.no-border img:nth-child(2) {
+    display: block;
+    width: 100%;
+    max-height: 10rem
+  }
+  .swiper-wrapper {
+    gap: 0!important
+  }
+  .swiper-autoheight .swiper-wrapper {
+    gap: 0
+  }
   .clients__item-wrapper {
     border: none
   }
@@ -1201,12 +1293,12 @@ form button {
 }
 @media (max-width:61.99875em) and (min-width:75em) {
   .menu__body {
-    top: 3.4375rem
+    top: 2.8125rem
   }
 }
 @media (max-width:61.99875em) and (min-width:20em) and (max-width:75em) {
   .menu__body {
-    top: clamp(2.1875rem ,1.7329545455rem + 2.2727272727vw ,3.4375rem)
+    top: clamp(1.25rem ,.6818181818rem + 2.8409090909vw ,2.8125rem)
   }
 }
 @media (min-width:20em) and (max-width:75em) {
@@ -1242,6 +1334,9 @@ form button {
   }
   .header__container {
     top: clamp(.75rem ,.4772727273rem + 1.3636363636vw ,1.5rem)
+  }
+  .header__menu {
+    height: clamp(2.5rem ,1.7727272727rem + 3.6363636364vw ,4.5rem)
   }
   .header__menu {
     padding-top: clamp(.5rem ,.4090909091rem + .4545454545vw ,.75rem)
@@ -1347,9 +1442,6 @@ form button {
   }
   .contact__wrapper {
     gap: clamp(.0000000625rem ,-3.1818180966rem + 15.9090907955vw ,8.75rem)
-  }
-  .contact__btn {
-    margin-top: clamp(2rem ,-.6818181818rem + 13.4090909091vw ,9.375rem)
   }
 }
 @media (any-hover:hover) {
